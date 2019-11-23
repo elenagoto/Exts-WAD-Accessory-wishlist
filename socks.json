@@ -1,0 +1,62 @@
+[
+  {
+    "name":"Pop socks",
+    "price":1.99,
+    "color":"red",
+    "imageHref":"./assets/images/red/socks/1.png"
+  },
+  {
+    "name":"Pop socks",
+    "price":1.99,
+    "color":"green",
+    "imageHref":"./assets/images/green/socks/1.png"
+  },
+  {
+    "name":"Pop socks",
+    "price":1.99,
+    "color":"blue",
+    "imageHref":"./assets/images/blue/socks/1.png"
+  },
+  {
+    "name":"Regular socks",
+    "price":3.99,
+    "color":"red",
+    "imageHref":"./assets/images/red/socks/2.png"
+  },
+  {
+    "name":"Regular socks",
+    "price":3.99,
+    "color":"blue",
+    "imageHref":"./assets/images/blue/socks/2.png"
+  },
+  {
+    "name":"Regular socks",
+    "price":3.99,
+    "color":"yellow",
+    "imageHref":"./assets/images/yellow/socks/2.png"
+  },
+  {
+    "name":"Regular socks",
+    "price":3.99,
+    "color":"green",
+    "imageHref":"./assets/images/green/socks/2.png"
+  },
+  {
+    "name":"Long socks",
+    "price":4.99,
+    "color":"red",
+    "imageHref":"./assets/images/red/socks/3.png"
+  },
+  {
+    "name":"Long socks",
+    "price":4.99,
+    "color":"blue",
+    "imageHref":"./assets/images/blue/socks/3.png"
+  },
+  {
+    "name":"Long socks",
+    "price":4.99,
+    "color":"green",
+    "imageHref":"./assets/images/green/socks/3.png"
+  }
+]

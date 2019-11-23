@@ -1,0 +1,14 @@
+.currency {
+  margin: 15px;
+  position: absolute;
+  right: 0px;
+}
+
+.currency:before {
+  content: "€";
+  padding-right: 2px;
+}
+
+.card-img-top {
+  padding: 15px;
+}

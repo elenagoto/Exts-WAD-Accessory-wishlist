@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Let's build a wishlist!</title>
+    <link href="assets/stylesheets/bootstrap.css" rel="stylesheet" />
+    <link href="assets/stylesheets/bootstrap-grid.css" rel="stylesheet" />
+    <link href="assets/stylesheets/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="assets/stylesheets/products.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">The Accessory Wishlist</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <button class="nav-link btn btn-outline-secondary mr-3">Hats</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link btn btn-outline-secondary mr-3">Socks</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link btn btn-outline-secondary mr-3">Sunglasses</button>
+            </li>
+          </ul>
+          <a class="btn btn-primary" href="./wishlist.html">See wishlist...</a>
+        </div>
+      </nav>
+    </div>
+
+    <div id="filters" class="container text-center p-3">
+      <p class="align-middle m-0">Filter products by colour:</p>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-secondary active">Red</button>
+        <button type="button" class="btn btn-outline-secondary">Blue</button>
+        <button type="button" class="btn btn-outline-secondary">Green</button>
+        <button type="button" class="btn btn-outline-secondary">Yellow</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="products" class="row">
+        <!-- Start of first Hat / Accessory HTML component -->
+        <div class="accessory col-sm-4"><!-- This is the root element of the Hat / Accessory component -->
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">11.99</div>
+            <img class="card-img-top" src="./assets/images/red/hats/1.png" alt="Image of baseball cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Baseball cap</h5>
+              <p class="card-text">Color: <em>red</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <!-- End of first Hat / Accessory HTML component -->
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">11.99</div>
+            <img class="card-img-top" src="./assets/images/blue/hats/1.png" alt="Image of baseball cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Baseball cap</h5>
+              <p class="card-text">Color: <em>blue</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">11.99</div>
+            <img class="card-img-top" src="./assets/images/yellow/hats/1.png" alt="Image of baseball cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Baseball cap</h5>
+              <p class="card-text">Color: <em>yellow</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">11.99</div>
+            <img class="card-img-top" src="./assets/images/green/hats/1.png" alt="Image of baseball cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Baseball cap</h5>
+              <p class="card-text">Color: <em>green</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">17.99</div>
+            <img class="card-img-top" src="./assets/images/red/hats/2.png" alt="Image of beanie">
+            <div class="card-body text-center">
+              <h5 class="card-title">Beanie</h5>
+              <p class="card-text">Color: <em>red</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">17.99</div>
+            <img class="card-img-top" src="./assets/images/blue/hats/2.png" alt="Image of beanie">
+            <div class="card-body text-center">
+              <h5 class="card-title">Beanie</h5>
+              <p class="card-text">Color: <em>blue</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">17.99</div>
+            <img class="card-img-top" src="./assets/images/green/hats/2.png" alt="Image of beanie">
+            <div class="card-body text-center">
+              <h5 class="card-title">Beanie</h5>
+              <p class="card-text">Color: <em>green</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">10.99</div>
+            <img class="card-img-top" src="./assets/images/yellow/hats/3.png" alt="Image of straw hat">
+            <div class="card-body text-center">
+              <h5 class="card-title">Straw hat</h5>
+              <p class="card-text">Color: <em>yellow</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">10.99</div>
+            <img class="card-img-top" src="./assets/images/blue/hats/3.png" alt="Image of straw hat">
+            <div class="card-body text-center">
+              <h5 class="card-title">Straw hat</h5>
+              <p class="card-text">Color: <em>blue</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">10.99</div>
+            <img class="card-img-top" src="./assets/images/red/hats/4.png" alt="Image of trilby">
+            <div class="card-body text-center">
+              <h5 class="card-title">Trilby</h5>
+              <p class="card-text">Color: <em>red</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">10.99</div>
+            <img class="card-img-top" src="./assets/images/blue/hats/4.png" alt="Image of trilby">
+            <div class="card-body text-center">
+              <h5 class="card-title">Trilby</h5>
+              <p class="card-text">Color: <em>blue</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+        <div class="accessory col-sm-4">
+          <div class="card my-3">
+            <div class="currency btn btn-light disabled">10.99</div>
+            <img class="card-img-top" src="./assets/images/yellow/hats/4.png" alt="Image of trilby">
+            <div class="card-body text-center">
+              <h5 class="card-title">Trilby</h5>
+              <p class="card-text">Color: <em>yellow</em></p>
+              <button class="btn btn-outline-primary">Add to wishlist!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="bg-secondary text-light">
+        <div class="row p-3 pt-5">
+          <div class="col-sm-6">
+            <p>
+              This is a simple clothing accessories wishlist, and consists of
+              two pages.  This page is for finding and adding up to three
+              accessories to your wishlist.
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p>
+              The second page displays up to three selected accessories. They
+              can be viewed, removed from your wishlist, and a total price will
+              be calculated.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="./assets/javascripts/products.js"></script>
+  </body>
+</html>
