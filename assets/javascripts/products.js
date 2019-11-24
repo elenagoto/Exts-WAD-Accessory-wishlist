@@ -60,6 +60,10 @@ const hatsArray = [
 ];
 
 console.log(hatsArray[4].toString());
+let hatsJSON = JSON.stringify(hatsArray);
+console.log(JSON.parse(hatsJSON));
+
+
 
 // Task 4 - Define a function that will accept a Hat object and create the HTML component
 // The component needs to match the structure of an individual HTML component
@@ -162,6 +166,9 @@ const filterHatsByColor = function(e) {
     element.setAttribute('style', 'display: none');
     // display only the ones that match the color
     if (element.classList.contains(color)) {
+      element.removeAttribute('style');
+    } else if (color == 'all') {
+      // task 5 - add button All and display all the components when clicked
       element.removeAttribute('style');
     }
   }
