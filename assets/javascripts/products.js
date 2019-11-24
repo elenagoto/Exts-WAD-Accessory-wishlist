@@ -60,9 +60,6 @@ const hatsArray = [
 ];
 
 console.log(hatsArray[4].toString());
-let hatsJSON = JSON.stringify(hatsArray);
-console.log(JSON.parse(hatsJSON));
-
 
 
 // Task 4 - Define a function that will accept a Hat object and create the HTML component
