@@ -112,7 +112,7 @@ const displayHat = function(hat) {
 
   // create last div for Accessory component
   let accessory = document.createElement('div');
-  accessory.className = 'accessory col-sm-4';
+  accessory.className = `accessory col-sm-4 ${hat.color}`;
   accessory.appendChild(card);
 
   // Get container from HTML
@@ -128,3 +128,28 @@ function renderAllAccessories (array) {
 }
 // Calling the function
 renderAllAccessories(hatsArray);
+
+// **********************
+// ** FILTER BY COLOR **
+
+// Task 1 - Write function that will remove the active class from all the filter
+// buttons and then add the active class to the button that was clicked
+// bind this function to each filter button
+const btnList = document.querySelectorAll('#filters .btn-group .btn')
+
+const highlightSelectedFilter = function(e) {
+  // remove active from all the buttons
+  for (let button of btnList) {
+    button.className = 'btn btn-outline-secondary'
+  }
+  // add active only to the button clicked
+  e.target.className += ' active';
+};
+
+// Bind the previous function to each button
+btnList.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    highlightSelectedFilter(e);
+  })
+});
+
