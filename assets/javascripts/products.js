@@ -7,10 +7,11 @@ const hat = {
   color: 'red',
   imageHref: './assets/images/red/hats/1.png',
   toString: function() {
-    return `Name: ${this.name}, 
-    Price: ${this.price}, 
-    Color: ${this.color}, 
-    imageHref: ${this.imageHref}`
+    return `Info:
+    - Name: ${this.name} 
+    - Price: ${this.price} 
+    - Color: ${this.color} 
+    - imageHref: ${this.imageHref}`
   }
 }
 
@@ -26,6 +27,11 @@ class Hat {
     this.color = color;
     this.imageHref = imageHref;
   }
+
+  // function to create the alt text for the image 
+  altText() {
+    return `Image of a ${this.color} ${this.name}`
+  }
   // add function to prototype. with ES6 can be done inside the prototype.
 //   toString() {
 //   return `Name: ${this.name}, 
@@ -38,8 +44,25 @@ class Hat {
 Hat.prototype.toString = hat.toString;
 
 const littleHat = new Hat('Small hat', 11.99, 'red', 'g');
-
 const bigHat = new Hat('Big hat', 11.99, 'blue', 'g');
 
 console.log(littleHat.toString());
 
+// Task 3 - Define an array of objects using the Hat prototype that represents all of the hats in the static HTML
+
+const hatsArray = [
+  new Hat('Baseball cap', 11.99, 'red', './assets/images/red/hats/1.png'), 
+  new Hat('Baseball cap', 11.99, 'blue', './assets/images/blue/hats/1.png'), 
+  new Hat('Baseball cap', 11.99, 'yellow', './assets/images/yellow/hats/1.png'), 
+  new Hat('Baseball cap', 11.99, 'green', './assets/images/green/hats/1.png'), 
+  new Hat('Beanie', 17.99, 'red', './assets/images/red/hats/2.png'), 
+  new Hat('Beanie', 17.99, 'blue', './assets/images/blue/hats/2.png'), 
+  new Hat('Beanie', 17.99, 'green', './assets/images/green/hats/2.png'), 
+  new Hat('Straw hat', 10.99, 'yellow', '/assets/images/yellow/hats/3.png'), 
+  new Hat('Straw hat', 10.99, 'blue', './assets/images/blue/hats/3.png'), 
+  new Hat('Trilby', 10.99, 'red', './assets/images/red/hats/4.png'), 
+  new Hat('Trilby', 10.99, 'blue', './assets/images/blue/hats/4.png'), 
+  new Hat('Trilby', 10.99, 'yellow', './assets/images/yellow/hats/4.png')
+];
+
+console.log(hatsArray[4].toString());
