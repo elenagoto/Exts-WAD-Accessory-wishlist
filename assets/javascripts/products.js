@@ -112,6 +112,7 @@ const displayHat = function(hat) {
 
   // create last div for Accessory component
   let accessory = document.createElement('div');
+  // Filter - task 2: Add CSS class with the color property
   accessory.className = `accessory col-sm-4 ${hat.color}`;
   accessory.appendChild(card);
 
@@ -135,7 +136,7 @@ renderAllAccessories(hatsArray);
 // Task 1 - Write function that will remove the active class from all the filter
 // buttons and then add the active class to the button that was clicked
 // bind this function to each filter button
-const btnList = document.querySelectorAll('#filters .btn-group .btn')
+const btnList = document.querySelectorAll('#filters .btn-group .btn');
 
 const highlightSelectedFilter = function(e) {
   // remove active from all the buttons
@@ -146,10 +147,31 @@ const highlightSelectedFilter = function(e) {
   e.target.className += ' active';
 };
 
-// Bind the previous function to each button
+// Task 2 - See above line 115
+
+// Task 3 - write empty function filterHatsByColor
+// Task 4 - the function should hide every hat component, then the button
+// textContent to display only the components that match the color
+const filterHatsByColor = function(e) {
+  const accssList = document.querySelectorAll('.accessory')
+  // get clicked button text
+  let color = e.target.textContent.toLowerCase();
+  
+  for (let element of accssList) {
+    // hide all the components
+    element.setAttribute('style', 'display: none');
+    // display only the ones that match the color
+    if (element.classList.contains(color)) {
+      element.removeAttribute('style');
+    }
+  }
+};
+
+// (Taks 1) Bind the previous function to each button
 btnList.forEach((button) => {
   button.addEventListener('click', (e) => {
     highlightSelectedFilter(e);
+    filterHatsByColor(e);
   })
 });
 
