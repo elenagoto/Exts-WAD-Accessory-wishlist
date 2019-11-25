@@ -109,7 +109,8 @@ const displayWishlist = function() {
 
 displayWishlist();
 
-const getStorageKey = (name, color) => {
+// Get the sessionStorage Key to use later with addEventListener
+const getStorageKey = function(name, color) {
   let key;
   for (let i = 0; i < sessionStorage.length; i++) {
     let tempKey = sessionStorage.key(i);
@@ -119,11 +120,36 @@ const getStorageKey = (name, color) => {
       key = tempKey;
     }
   }
-  return key
+  return key;
+}
+
+// Get HTMLcomponent to erase to use later with addEventListener
+const getHTMLcomponent = function(button) {
+  // get Accessory div from clicked button
+  return button.parentElement.parentElement.parentElement;
 }
 
 const removeFromWishlist = function(key, htmlComponent) {
-
+  sessionStorage.removeItem(key);
+  htmlComponent.parentElement.removeChild(htmlComponent);
 }
 
+// Get the parent element of all accessories to bind event only once
+const accessoriesParent = document.querySelector('#products');
+
+// bind function to parent and then delegate to buttons
+accessoriesParent.addEventListener('click', (e) => {
+  if (e.target.tagName == 'BUTTON' && e.target.parentElement.classList.contains('card-body')) {
+    e.preventDefault();
+    // Get name and color of the accesory to remove
+    let name = e.target.parentElement.firstChild.textContent;
+    let color = e.target.previousElementSibling.lastChild.textContent;
+
+    // get the sessionStorage key and HTML component to erase
+    let key = getStorageKey(name, color);
+    let htmlComponent = getHTMLcomponent(e.target);
+  
+    removeFromWishlist(key, htmlComponent);
+  }
+})
 
