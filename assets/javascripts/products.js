@@ -86,6 +86,11 @@ const displayAccessory = function(accessory) {
   cardBtn.textContent = 'Add to wishlist!';
   cardBtn.className = 'btn btn-outline-primary';
 
+  // Task 1 from WishList! 
+  cardBtn.addEventListener('click', (e) => {
+    addToWishList(e, accessory);
+  })
+
   // create div to contain first 3 elements
   let cardBody = document.createElement('div');
   cardBody.className = 'card-body text-center';
@@ -215,7 +220,7 @@ const loadRemoteAccessories = function(e) {
         renderAllAccessories(accessoriesArray);
       });
   }
-}
+};
 
 // Get all the buttons of the accessories categories
 const btnAccessoriesList = document.querySelector('#navbarSupportedContent ul');
@@ -227,3 +232,13 @@ btnAccessoriesList.addEventListener('click', (e) => {
     loadRemoteAccessories(e);
   }
 });
+
+// *************************************
+// THE WISHLIST
+const addToWishList = function(e, accessory) {
+  e.preventDefault();
+  console.log(accessory);
+  
+};
+
+
