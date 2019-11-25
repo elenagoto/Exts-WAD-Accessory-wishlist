@@ -20,7 +20,7 @@ class Accessory {
   }
 }
 
-// Add functions from the products document and addapt them to wishlist page
+// Add functions from the products document and adapt them to wishlist page
 
 const displayAccessory = function (accessory) {
   // create H5
@@ -77,9 +77,9 @@ const displayAccessory = function (accessory) {
   const products = document.getElementById('products');
   products.appendChild(accessoryDiv);
 }
+
+
 // Get stored accessories from sessionStorage
-
-
 const getStoredAccessories = function() {
   let accessoriesArray = []
   for (let i = 0; i <= sessionStorage.length; i++){
@@ -99,6 +99,7 @@ const getStoredAccessories = function() {
   
   return accessoriesArray;
 }
+
 // Function to render all the elements on the products page
 const displayWishlist = function() {
   let array = getStoredAccessories();
@@ -107,7 +108,10 @@ const displayWishlist = function() {
   }
 }
 
+// Calling the function as soon as the page is open
+// ****** Display elements in the page 
 displayWishlist();
+
 
 // Get the sessionStorage Key to use later with addEventListener
 const getStorageKey = function(name, color) {

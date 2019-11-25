@@ -30,13 +30,6 @@ class Accessory {
   altText() {
     return `Image of ${this.color} ${this.name}`
   }
-  // add function to prototype. with ES6 can be done inside the prototype.
-//   toString() {
-//   return `Name: ${this.name}, 
-//     Price: ${this.price}, 
-//     Color: ${this.color}, 
-//     imageHref: ${this.imageHref}`
-// }
 }
 // The task requires to add a function toString() to the prototype that is the same as the toString() method from the previous task. So, I used the `toString()` method from `hat` to add it to the prototype: 
 Accessory.prototype.toString = hat.toString;
@@ -58,8 +51,6 @@ const hatsArray = [
   new Accessory('Trilby', 10.99, 'blue', './assets/images/blue/hats/4.png'),
   new Accessory('Trilby', 10.99, 'yellow', './assets/images/yellow/hats/4.png')
 ];
-
-console.log(hatsArray[4].toString());
 
 
 // Task 4 - Define a function that will accept a Hat object and create the HTML component
@@ -133,10 +124,11 @@ function renderAllAccessories (array) {
     displayAccessory(accessory);
   }
 }
-// Calling the function
+// Calling the function as soon as the page is open
+// ****** Display elements in the page 
 renderAllAccessories(hatsArray);
 
-// **********************
+// ****************************
 // ** FILTER BY COLOR **
 
 // Task 1 - Write function that will remove the active class from all the filter
@@ -152,7 +144,7 @@ const highlightSelectedFilter = function(e) {
   e.target.className += ' active';
 };
 
-// Task 2 - See above line 115
+// Task 2 - See above line 80
 
 // Task 3 - write empty function filterHatsByColor
 // Task 4 - the function should hide every hat component, then the button
@@ -177,7 +169,7 @@ const filterAccessoriesByColor = function(e) {
 
 // (Taks 1) Bind the previous function to each button
 const btnColorList = document.querySelector('#filters .btn-group');
-
+// bind function to parent and then delegate to buttons
 btnColorList.addEventListener('click', (e) => {
   if (e.target.tagName == 'BUTTON') {
     e.preventDefault();
@@ -186,7 +178,7 @@ btnColorList.addEventListener('click', (e) => {
   }
 });
 
-// *******************
+// ***************************
 // ** SOCKS & GLASSES ***
 // Task 1 and 2 done. Now the project outline refers to `accessories` instead of `hats`
 // Task 3 - Create function to load remote accessories and bind it to the selection buttons on top of the page
