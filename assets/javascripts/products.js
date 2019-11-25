@@ -238,7 +238,8 @@ btnAccessoriesList.addEventListener('click', (e) => {
 const addToWishList = function(e, accessory) {
   e.preventDefault();
   console.log(accessory);
-  
+  let accessoryString = JSON.stringify(accessory);
+  sessionStorage.setItem('accessory1 ', accessoryString);
 };
 
 
