@@ -239,7 +239,23 @@ const addToWishList = function(e, accessory) {
   e.preventDefault();
   console.log(accessory);
   let accessoryString = JSON.stringify(accessory);
-  sessionStorage.setItem('accessory1 ', accessoryString);
+  // Add string to sessionStorage
+  if (sessionStorage.length < 3) {
+    // Use unused key in sessionStorage
+    let key;
+    if (!sessionStorage.getItem(`accessory1`)) {
+      key = 'accessory1';
+    } else if (!sessionStorage.getItem(`accessory2`)) {
+      key = 'accessory2';
+    } else if (!sessionStorage.getItem(`accessory3`)) {
+      key = 'accessory3';
+    }
+    sessionStorage.setItem(key, accessoryString);
+  // If there are already 3 elements in the sessionStorage
+  } else {
+    alert('The WishList is full!');
+  }
 };
+
 
 
