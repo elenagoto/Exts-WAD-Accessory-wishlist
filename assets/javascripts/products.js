@@ -140,7 +140,7 @@ renderAllAccessories(hatsArray);
 
 const highlightSelectedFilter = function(e) {
   // remove active from all the buttons
-  for (let button of btnColorList) {
+  for (let button of btnColorList.children) {
     button.className = 'btn btn-outline-secondary'
   }
   // add active only to the button clicked
@@ -171,13 +171,14 @@ const filterAccessoriesByColor = function(e) {
 }
 
 // (Taks 1) Bind the previous function to each button
-const btnColorList = document.querySelectorAll('#filters .btn-group .btn');
+const btnColorList = document.querySelector('#filters .btn-group');
 
-btnColorList.forEach((button) => {
-  button.addEventListener('click', (e) => {
+btnColorList.addEventListener('click', (e) => {
+  if (e.target.tagName == 'BUTTON') {
+    e.preventDefault();
     highlightSelectedFilter(e);
     filterAccessoriesByColor(e);
-  })
+  }
 });
 
 // *******************
@@ -190,7 +191,7 @@ const loadRemoteAccessories = function(e) {
   const products = document.getElementById('products');
   products.innerHTML = '';
   // Deselect the chosen color from previous filters
-  for (let button of btnColorList) {
+  for (let button of btnColorList.children) {
     button.className = 'btn btn-outline-secondary'
   }
 
@@ -217,11 +218,12 @@ const loadRemoteAccessories = function(e) {
 }
 
 // Get all the buttons of the accessories categories
-const btnAccessoriesList = document.querySelectorAll('#navbarSupportedContent li');
+const btnAccessoriesList = document.querySelector('#navbarSupportedContent ul');
 
-// Bind the function to the buttons
-btnAccessoriesList.forEach((button) => {
-  button.addEventListener('click', (e) => {
+// bind function to parent and then delegate to buttons
+btnAccessoriesList.addEventListener('click', (e) => {
+  if (e.target.tagName == 'BUTTON') {
+    e.preventDefault();
     loadRemoteAccessories(e);
-  })
+  }
 });
