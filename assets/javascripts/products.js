@@ -28,7 +28,7 @@ class Accessory {
 
   // function to create the alt text for the image 
   altText() {
-    return `Image of a ${this.color} ${this.name}`
+    return `Image of ${this.color} ${this.name}`
   }
   // add function to prototype. with ES6 can be done inside the prototype.
 //   toString() {
@@ -137,11 +137,10 @@ renderAllAccessories(hatsArray);
 // Task 1 - Write function that will remove the active class from all the filter
 // buttons and then add the active class to the button that was clicked
 // bind this function to each filter button
-const btnList = document.querySelectorAll('#filters .btn-group .btn');
 
 const highlightSelectedFilter = function(e) {
   // remove active from all the buttons
-  for (let button of btnList) {
+  for (let button of btnColorList) {
     button.className = 'btn btn-outline-secondary'
   }
   // add active only to the button clicked
@@ -169,13 +168,59 @@ const filterAccessoriesByColor = function(e) {
       element.removeAttribute('style');
     }
   }
-};
+}
 
 // (Taks 1) Bind the previous function to each button
-btnList.forEach((button) => {
+const btnColorList = document.querySelectorAll('#filters .btn-group .btn');
+
+btnColorList.forEach((button) => {
   button.addEventListener('click', (e) => {
     highlightSelectedFilter(e);
     filterAccessoriesByColor(e);
   })
 });
 
+// *******************
+// ** SOCKS & GLASSES ***
+// Task 1 and 2 done. Now the project outline refers to `accessories` instead of `hats`
+// Task 3
+
+const loadRemoteAccessories = function(e) {
+  // erase all the elements on the page:
+  const products = document.getElementById('products');
+  products.innerHTML = '';
+  // The deselect the chosen color from previous filters
+  for (let button of btnColorList) {
+    button.className = 'btn btn-outline-secondary'
+  }
+
+  // Get button text content
+  let chosenCategory = e.target.textContent.trim().toLowerCase();
+  // if chosen element is hats, then render the hatsArray
+  if (chosenCategory == 'hats') {
+    renderAllAccessories(hatsArray);
+  // Else, get the right JSON file to render the correct accessories 
+  } else {
+    fetch(`./${chosenCategory}.json`)
+      .then(response => response.json())
+      .then(myJson => {
+        // array to get all the accessoties of the chosen category
+        const accessoriesArray = [];
+        for (let object of myJson) {
+          // Create new object with constructor using the JSON information
+          let accessoryElement = new Accessory(object.name, object.price, object.color, object.imageHref);
+          accessoriesArray.push(accessoryElement);
+        }
+        renderAllAccessories(accessoriesArray);
+      });
+  }
+}
+
+// Get all the buttons of the accessories categories
+const btnAccessoriesList = document.querySelectorAll('#navbarSupportedContent li');
+
+btnAccessoriesList.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    loadRemoteAccessories(e);
+  })
+});
