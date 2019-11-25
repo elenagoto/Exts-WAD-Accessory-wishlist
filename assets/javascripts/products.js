@@ -18,7 +18,7 @@ const hat = {
 // Task 2 - Define JS prototype for a Hat that can be used to construct the object
 
 // I'll use ES6 class syntax 
-class Hat {
+class Accessory {
   constructor(name, price, color, imageHref) {
     this.name = name;
     this.price = price;
@@ -39,24 +39,24 @@ class Hat {
 // }
 }
 // The task requires to add a function toString() to the prototype that is the same as the toString() method from the previous task. So, I used the `toString()` method from `hat` to add it to the prototype: 
-Hat.prototype.toString = hat.toString;
+Accessory.prototype.toString = hat.toString;
 
 
 // Task 3 - Define an array of objects using the Hat prototype that represents all of the hats in the static HTML
 
 const hatsArray = [
-  new Hat('Baseball cap', 11.99, 'red', './assets/images/red/hats/1.png'), 
-  new Hat('Baseball cap', 11.99, 'blue', './assets/images/blue/hats/1.png'), 
-  new Hat('Baseball cap', 11.99, 'yellow', './assets/images/yellow/hats/1.png'), 
-  new Hat('Baseball cap', 11.99, 'green', './assets/images/green/hats/1.png'), 
-  new Hat('Beanie', 17.99, 'red', './assets/images/red/hats/2.png'), 
-  new Hat('Beanie', 17.99, 'blue', './assets/images/blue/hats/2.png'), 
-  new Hat('Beanie', 17.99, 'green', './assets/images/green/hats/2.png'), 
-  new Hat('Straw hat', 10.99, 'yellow', './assets/images/yellow/hats/3.png'), 
-  new Hat('Straw hat', 10.99, 'blue', './assets/images/blue/hats/3.png'), 
-  new Hat('Trilby', 10.99, 'red', './assets/images/red/hats/4.png'), 
-  new Hat('Trilby', 10.99, 'blue', './assets/images/blue/hats/4.png'), 
-  new Hat('Trilby', 10.99, 'yellow', './assets/images/yellow/hats/4.png')
+  new Accessory('Baseball cap', 11.99, 'red', './assets/images/red/hats/1.png'),
+  new Accessory('Baseball cap', 11.99, 'blue', './assets/images/blue/hats/1.png'),
+  new Accessory('Baseball cap', 11.99, 'yellow', './assets/images/yellow/hats/1.png'),
+  new Accessory('Baseball cap', 11.99, 'green', './assets/images/green/hats/1.png'),
+  new Accessory('Beanie', 17.99, 'red', './assets/images/red/hats/2.png'),
+  new Accessory('Beanie', 17.99, 'blue', './assets/images/blue/hats/2.png'),
+  new Accessory('Beanie', 17.99, 'green', './assets/images/green/hats/2.png'),
+  new Accessory('Straw hat', 10.99, 'yellow', './assets/images/yellow/hats/3.png'),
+  new Accessory('Straw hat', 10.99, 'blue', './assets/images/blue/hats/3.png'),
+  new Accessory('Trilby', 10.99, 'red', './assets/images/red/hats/4.png'),
+  new Accessory('Trilby', 10.99, 'blue', './assets/images/blue/hats/4.png'),
+  new Accessory('Trilby', 10.99, 'yellow', './assets/images/yellow/hats/4.png')
 ];
 
 console.log(hatsArray[4].toString());
@@ -66,15 +66,15 @@ console.log(hatsArray[4].toString());
 // The component needs to match the structure of an individual HTML component
 // Then use function to render all the hats instead of the static HTML
 
-const displayHat = function(hat) {
+const displayAccessory = function(accessory) {
   // create H5
   let cardTitle = document.createElement('h5');
-  cardTitle.innerText = hat.name;
+  cardTitle.innerText = accessory.name;
   cardTitle.className = 'card-title';
 
   // create paragraph
   let cardTextColor = document.createElement('em');
-  cardTextColor.innerText = hat.color;
+  cardTextColor.innerText = accessory.color;
   let cardTextTitle = document.createTextNode('Color: ')
   let cardText = document.createElement('p');
   cardText.className = 'card-text';
@@ -95,14 +95,14 @@ const displayHat = function(hat) {
 
   // create div for price
   let currency = document.createElement('div');
-  currency.textContent = hat.price;
+  currency.textContent = accessory.price;
   currency.className = 'currency btn btn-light disabled';
 
   // create image element
   let img = document.createElement('img');
   img.className = 'card-img-top';
-  img.setAttribute('src', hat.imageHref);
-  img.setAttribute('alt', hat.altText());
+  img.setAttribute('src', accessory.imageHref);
+  img.setAttribute('alt', accessory.altText());
 
   // create div to contain the next 3 elements
   let card = document.createElement('div');
@@ -112,20 +112,20 @@ const displayHat = function(hat) {
   card.appendChild(cardBody);
 
   // create last div for Accessory component
-  let accessory = document.createElement('div');
+  let accessoryDiv = document.createElement('div');
   // Filter - task 2: Add CSS class with the color property
-  accessory.className = `accessory col-sm-4 ${hat.color}`;
-  accessory.appendChild(card);
+  accessoryDiv.className = `accessory col-sm-4 ${accessory.color}`;
+  accessoryDiv.appendChild(card);
 
   // Get container from HTML
   const products = document.getElementById('products');
-  products.appendChild(accessory);
+  products.appendChild(accessoryDiv);
 }
 
 // Function to render all the elements on the products page
 function renderAllAccessories (array) {
   for (let accessory of array) {
-    displayHat(accessory);
+    displayAccessory(accessory);
   }
 }
 // Calling the function
@@ -153,7 +153,7 @@ const highlightSelectedFilter = function(e) {
 // Task 3 - write empty function filterHatsByColor
 // Task 4 - the function should hide every hat component, then the button
 // textContent to display only the components that match the color
-const filterHatsByColor = function(e) {
+const filterAccessoriesByColor = function(e) {
   const accssList = document.querySelectorAll('.accessory')
   // get clicked button text
   let color = e.target.textContent.toLowerCase();
@@ -175,7 +175,7 @@ const filterHatsByColor = function(e) {
 btnList.forEach((button) => {
   button.addEventListener('click', (e) => {
     highlightSelectedFilter(e);
-    filterHatsByColor(e);
+    filterAccessoriesByColor(e);
   })
 });
 
