@@ -183,13 +183,13 @@ btnColorList.forEach((button) => {
 // *******************
 // ** SOCKS & GLASSES ***
 // Task 1 and 2 done. Now the project outline refers to `accessories` instead of `hats`
-// Task 3
+// Task 3 - Create function to load remote accessories and bind it to the selection buttons on top of the page
 
 const loadRemoteAccessories = function(e) {
   // erase all the elements on the page:
   const products = document.getElementById('products');
   products.innerHTML = '';
-  // The deselect the chosen color from previous filters
+  // Deselect the chosen color from previous filters
   for (let button of btnColorList) {
     button.className = 'btn btn-outline-secondary'
   }
@@ -219,6 +219,7 @@ const loadRemoteAccessories = function(e) {
 // Get all the buttons of the accessories categories
 const btnAccessoriesList = document.querySelectorAll('#navbarSupportedContent li');
 
+// Bind the function to the buttons
 btnAccessoriesList.forEach((button) => {
   button.addEventListener('click', (e) => {
     loadRemoteAccessories(e);

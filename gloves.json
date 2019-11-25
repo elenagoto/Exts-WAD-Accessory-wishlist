@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Standard gloves",
+    "price": 16.99,
+    "color": "red",
+    "imageHref": "./assets/images/red/gloves/1.png"
+  },
+  {
+    "name": "Standard gloves",
+    "price": 16.99,
+    "color": "blue",
+    "imageHref": "./assets/images/blue/gloves/1.png"
+  },
+  {
+    "name": "Standard gloves",
+    "price": 16.99,
+    "color": "green",
+    "imageHref": "./assets/images/green/gloves/1.png"
+  },
+  {
+    "name": "Fingerless gloves",
+    "price": 14.99,
+    "color": "red",
+    "imageHref": "./assets/images/red/gloves/2.png"
+  },
+  {
+    "name": "Fingerless gloves",
+    "price": 14.99,
+    "color": "yellow",
+    "imageHref": "./assets/images/yellow/gloves/2.png"
+  },
+  {
+    "name": "Fingerless gloves",
+    "price": 14.99,
+    "color": "blue",
+    "imageHref": "./assets/images/blue/gloves/2.png"
+  },
+  {
+    "name": "Mittens gloves",
+    "price": 18.99,
+    "color": "red",
+    "imageHref": "./assets/images/red/gloves/3.png"
+  },
+  {
+    "name": "Mittens gloves",
+    "price": 18.99,
+    "color": "green",
+    "imageHref": "./assets/images/green/gloves/3.png"
+  }
+]
