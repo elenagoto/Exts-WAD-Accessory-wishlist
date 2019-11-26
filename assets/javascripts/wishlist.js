@@ -42,6 +42,12 @@ const displayAccessory = function (accessory) {
   cardBtn.textContent = 'Remove';
   cardBtn.className = 'btn btn-outline-danger';
 
+  cardBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    let key = getStorageKey(accessory.name, accessory.color);
+    removeFromWishlist(key, accessoryDiv);
+  } )
+
   // create div to contain first 3 elements
   let cardBody = document.createElement('div');
   cardBody.className = 'card-body text-center';
@@ -127,33 +133,33 @@ const getStorageKey = function(name, color) {
   return key;
 }
 
-// Get HTMLcomponent to erase to use later with addEventListener
-const getHTMLcomponent = function(button) {
-  // get Accessory div from clicked button
-  return button.parentElement.parentElement.parentElement;
-}
+// // Get HTMLcomponent to erase to use later with addEventListener
+// const getHTMLcomponent = function(button) {
+//   // get Accessory div from clicked button
+//   return button.parentElement.parentElement.parentElement;
+// }
 
 const removeFromWishlist = function(key, htmlComponent) {
   sessionStorage.removeItem(key);
   htmlComponent.parentElement.removeChild(htmlComponent);
 }
 
-// Get the parent element of all accessories to bind event only once
-const accessoriesParent = document.querySelector('#products');
+// // Get the parent element of all accessories to bind event only once
+// const accessoriesParent = document.querySelector('#products');
 
-// bind function to parent and then delegate to buttons
-accessoriesParent.addEventListener('click', (e) => {
-  if (e.target.tagName == 'BUTTON' && e.target.parentElement.classList.contains('card-body')) {
-    e.preventDefault();
-    // Get name and color of the accesory to remove
-    let name = e.target.parentElement.firstChild.textContent;
-    let color = e.target.previousElementSibling.lastChild.textContent;
+// // bind function to parent and then delegate to buttons
+// accessoriesParent.addEventListener('click', (e) => {
+//   if (e.target.tagName == 'BUTTON' && e.target.parentElement.classList.contains('card-body')) {
+//     e.preventDefault();
+//     // Get name and color of the accesory to remove
+//     let name = e.target.parentElement.firstChild.textContent;
+//     let color = e.target.previousElementSibling.lastChild.textContent;
 
-    // get the sessionStorage key and HTML component to erase
-    let key = getStorageKey(name, color);
-    let htmlComponent = getHTMLcomponent(e.target);
+//     // get the sessionStorage key and HTML component to erase
+//     let key = getStorageKey(name, color);
+//     let htmlComponent = getHTMLcomponent(e.target);
   
-    removeFromWishlist(key, htmlComponent);
-  }
-})
+//     removeFromWishlist(key, htmlComponent);
+//   }
+// })
 
